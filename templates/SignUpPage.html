@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBook</title>
+    <style>
+        html{
+    background-color: rgb(240, 237, 237);
+}
+*{
+    margin: 0;
+}
+main{
+    z-index: 2;
+    position: fixed;
+}
+
+
+main h1{
+    align-items: center;
+    display: inline;
+    position: fixed;
+    top: 3vh;
+    left: 42vw;
+    color: rgb(76, 76, 228);
+    font-style: italic;
+    font-size: 8vh;
+}
+main .form_background{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+    display: grid;
+    border-radius: 10px;
+    position: relative;
+    top: 15vh;
+    left: 35vw;
+    z-index: 1;
+    background-color: white;
+    height: 70vh;
+    width: 30vw;
+}
+main input[type=text],[type=password]{
+    font-size: small;
+    height: 4%;
+    width: 50%;
+    margin-bottom: 3vh;
+    position: relative;
+    top: 7vh;
+    left: 2.5vw;
+    bottom: 5px;
+    border-radius: 7px;
+    text-align: center;
+    border: 1px solid rgb(211, 207, 207);
+    padding : 2vh 5vw;
+
+}
+main input[type=submit]{
+    background-color: rgb(23, 218, 52);
+    border: 1px solid rgb(35, 228, 64);
+    font-size: medium;
+    color: white;
+    height: 10%;
+    width: 85%;
+    margin-bottom: 3vh;
+    position: relative;
+    top: 8vh;
+    left: 2.5vw;
+    bottom: 5px;
+    border-radius: 7px;
+    text-align: center;
+   
+    padding : 2vh 8vw;
+}
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>FaceBook</h1>
+        <user_form class="form_background">
+            <form action="/create_account" method="post">
+                <input type="text" name="first_name" placeholder="First Name" id="first_name">
+
+                <input type="text" name="last_name" placeholder="Last Name" id="last_name">
+
+                <input type="text" name="mobile_no" placeholder="Mobile No" id="mobile_no">
+
+                <input type="password" name="password" placeholder="Password" id="password">
+
+                <input type="password" name="confirm_password" placeholder="Confirm Password">
+
+                <input type="submit" value="Sign Up">
+            </form>
+            
+    </main>
+</body>
+
+</html>
