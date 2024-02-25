@@ -7,7 +7,7 @@ html {
 }
 
 header {
-    box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.1), 100px 100px 100px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
     position: fixed;
     background-color: rgb(59, 59, 244);
     z-index: 3;
@@ -73,8 +73,9 @@ header nav form button {
 }
 
 main {
+    z-index: 2;
     display: grid;
-    box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.1), 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
     background-color: white;
     position: relative;
     top: 90px;
@@ -84,7 +85,7 @@ main {
     border-radius: 10px;
 }
 
-main upper text input[type=text] {
+main form upper text input[type=text] {
 
     font-size: medium;
     text-align: center;
@@ -94,11 +95,11 @@ main upper text input[type=text] {
     position: relative;
     top: 3vh;
     left: 1.7vw;
-    height: 40%;
+    height: 20%;
     width: 80%;
 }
 
-main upper dp {
+main form upper dp {
     position: relative;
     float: left;
     top: 15px;
@@ -114,40 +115,62 @@ main upper dp {
 }
 
 
+main form lower{
+    
+    
+    
+} 
+main form lower #file-input-label {
 
-#file-input {
-    float: left;
-    display: none;
-}
-
-#file-input-label {
     background-color: rgb(23, 218, 52);
     color: antiquewhite;
     position: relative;
-    left: 1.5vw;
-    top: 1vh;
+    top: 6.5vh;
+    left: -25px;
+    width: 30%;
     font-size: small;
     padding: 10px 15px;
     border: 1px solid rgb(23, 218, 52);
     border-radius: 10px;
 }
 
-#file-input {
-    float: left;
+main form lower #file-input {
+  
     display: none;
+    position: relative;
+    left: 1%;
 }
 
-main lower input[type=submit] {
+main form lower input[type=submit] {
     font-family: 'Times New Roman', Times, serif;
     font-size: medium;
     background-color: rgb(59, 59, 244);
     color: antiquewhite;
     position: relative;
-    left: 57%;
-    top: 1vh;
+    left: 48%;
+    top: 6.5vh;
     font-size: small;
     padding: 10px 15px;
     border: 1px solid rgb(99, 99, 223);
     border-radius: 10px;
     width: 8vw;
+}
+posts{
+    display: block;
+    padding: 3px 7px 3px 7px;
+}
+.post{
+    
+    margin-bottom: 30px;
+    padding-top: 10px;
+    display: block;
+    box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
+    background-color: white;
+    position: relative;
+    top: 130px;
+    height: 60vh;
+    width: 70vh;
+    left: 35.3vw;
+    border-radius: 10px;
+    
 }

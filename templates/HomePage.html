@@ -31,22 +31,33 @@
         </nav>
     </header>
     <main>
-        <upper>
-            <dp>
+        <form>
+            <upper>
+                <dp>
 
-            </dp>
-            <text>
-                <input type="text" placeholder="What's going on">
-            </text>
-        </upper>
-        <lower>
+                </dp>
+                <text>
+                    <input type="text" placeholder="What's going on">
+                </text>
+            </upper>
+            <lower>
+                <input type="file" id="file-input" name="file-input" />
 
-            <input type="file" id="file-input" name="file-input" />
-
-            <label id="file-input-label" for="file-input">Photo</label>
-            <input type="submit" value="Post" id="submit">
-        </lower>
+                <label id="file-input-label" for="file-input">Photo</label>
+                <input type="submit" value="Post" id="submit">
+            </lower>
+        </form>
     </main>
+   
+    <posts>
+        <post_1 class="post">
+
+        </post_1>
+        
+        <post_2 class="post">
+
+        </post_2>
+    </posts>
 </body>
 
 </html>
