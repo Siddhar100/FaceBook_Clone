@@ -72,9 +72,11 @@ header nav form button {
 
 }
 
-main {
+main form {
     z-index: 2;
     display: grid;
+    grid-auto-flow: row;
+    grid-gap: 4px;
     box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
     background-color: white;
     position: relative;
@@ -85,24 +87,52 @@ main {
     border-radius: 10px;
 }
 
+
+
+main form upper {
+    border-radius: 10px;
+    box-sizing: border-box;
+    float: left;
+    background-color: rgb(240, 237, 237);
+    position: relative;
+    left: 0.5vw;
+    top: 14%;
+    height: 85%;
+    width: 30.7vw;
+}
+
+main form lower {
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: rgb(240, 237, 237);
+    position: relative;
+    top: 1%;
+    height: 85%;
+    left: 0.5vw;
+    bottom: 30%;
+    width: 30.7vw;
+}
+
 main form upper text input[type=text] {
 
     font-size: medium;
     text-align: center;
-    background-color: rgb(247, 245, 245);
+    background-color: white;
+    border: 1px solid rgb(211, 207, 207);
+    ;
     border-radius: 20px;
-    border: 1px solid antiquewhite;
+
     position: relative;
-    top: 3vh;
+    top: 1.5vh;
     left: 1.7vw;
-    height: 20%;
+    height: 55%;
     width: 80%;
 }
 
-main form upper dp {
+main form upper dp img{
     position: relative;
     float: left;
-    top: 15px;
+    top: 5px;
     left: 1vw;
     color: rgb(153, 152, 150);
     height: 45px;
@@ -115,27 +145,23 @@ main form upper dp {
 }
 
 
-main form lower{
-    
-    
-    
-} 
+
 main form lower #file-input-label {
 
     background-color: rgb(23, 218, 52);
-    color: antiquewhite;
+    color: white;
     position: relative;
-    top: 6.5vh;
-    left: -25px;
-    width: 30%;
+    top: 1.3vh;
+    left: 20px;
+    width: 50%;
     font-size: small;
     padding: 10px 15px;
-    border: 1px solid rgb(23, 218, 52);
+    border: 2px solid rgb(254, 255, 255);
     border-radius: 10px;
 }
 
 main form lower #file-input {
-  
+
     display: none;
     position: relative;
     left: 1%;
@@ -147,23 +173,25 @@ main form lower input[type=submit] {
     background-color: rgb(59, 59, 244);
     color: antiquewhite;
     position: relative;
-    left: 48%;
-    top: 6.5vh;
+    left: 55%;
+    top: 1.2vh;
     font-size: small;
     padding: 10px 15px;
-    border: 1px solid rgb(99, 99, 223);
+    border: 2px solid rgb(254, 255, 255);
     border-radius: 10px;
     width: 8vw;
 }
-posts{
+
+posts {
     display: block;
     padding: 3px 7px 3px 7px;
 }
-.post{
-    
+
+.post {
+
     margin-bottom: 30px;
     padding-top: 10px;
-    display: block;
+    display: grid;
     box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
     background-color: white;
     position: relative;
@@ -172,5 +200,55 @@ posts{
     width: 70vh;
     left: 35.3vw;
     border-radius: 10px;
-    
+}
+
+posts .post post-header {
+    position: relative;
+    border-radius: 4px;
+    left: 0.8vw;
+    height: 9vh;
+    width: 30vw;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: rgb(240, 237, 237);
+}
+
+posts .post post-body {
+    position: relative;
+    border-radius: 4px;
+    top: 4px;
+    left: 0.8vw;
+    height: 48vh;
+    width: 30vw;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: rgb(240, 237, 237);
+}
+
+posts post post-header img {
+    position: relative;
+    float: left;
+    top: 8px;
+    left: 1vw;
+    color: rgb(153, 152, 150);
+    height: 45px;
+    width: 45px;
+    background-color: #bbb;
+    border-radius: 50%;
+    border: 1px solid rgb(253, 252, 250);
+    border-radius: 50%;
+    background-color: rgb(193, 190, 190);
+}
+posts post post-body img {
+    border-radius: 4px;
+    background-color: rgb(193, 190, 190);
+}
+posts post post-header post-name {
+    font-size: medium;
+    position: relative;
+    font-size: 20px;
+    top: 3vh;
+    left: 6%;
+    color: rgb(107, 104, 104);
+    border-color: white;
 }
