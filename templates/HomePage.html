@@ -5,7 +5,264 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FaceBook</title>
-    <link rel="stylesheet" href="/FaceBook_Clone/templates/HomePage.css">
+    <style>
+        html {
+            background-color: rgb(240, 237, 237);
+        }
+
+        * {
+            margin: 0;
+        }
+
+        header {
+            box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
+            position: fixed;
+            background-color: rgb(59, 59, 244);
+            z-index: 3;
+            height: 10vh;
+            width: 100%;
+        }
+
+        header nav scarch {
+
+            float: left;
+        }
+
+        header nav scarch form input[type=text] {
+            border: 2px solid rgb(253, 252, 250);
+            border-radius: 7px;
+            position: relative;
+            background-color: white;
+            height: 4vh;
+            width: 15vw;
+            top: 3vh;
+            left: 2vw;
+        }
+
+        header nav scarch form input[type=submit] {
+            color: rgb(153, 152, 150);
+            font-size: small;
+            border: 2px solid rgb(253, 252, 250);
+            border-radius: 7px;
+            position: relative;
+            background-color: white;
+            height: 5vh;
+            width: 5vw;
+            top: 3vh;
+            left: 2.5vw;
+        }
+
+        header nav ul a {
+            padding-top: 1vh;
+            font-size: large;
+            text-decoration: none;
+            padding-left: 5vw;
+            color: white;
+            position: relative;
+            top: 4vh;
+            left: 15vw;
+        }
+
+
+
+        header nav form button {
+            font-size: 10px;
+            position: fixed;
+            color: white;
+            height: 40px;
+            width: 40px;
+            background-color: rgb(23, 218, 52);
+            border-radius: 50%;
+            border: 1px solid rgb(253, 252, 250);
+            border-radius: 50%;
+            left: 95%;
+            top: 15px;
+
+        }
+
+        main form {
+            z-index: 2;
+            display: grid;
+            grid-auto-flow: row;
+            grid-gap: 4px;
+            box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
+            background-color: white;
+            position: relative;
+            top: 90px;
+            height: 20vh;
+            width: 70vh;
+            left: 36vw;
+            border-radius: 10px;
+        }
+
+
+
+        main form upper {
+            border-radius: 10px;
+            box-sizing: border-box;
+            float: left;
+            background-color: rgb(240, 237, 237);
+            position: relative;
+            left: 0.5vw;
+            top: 14%;
+            height: 85%;
+            width: 30.7vw;
+        }
+
+        main form lower {
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: rgb(240, 237, 237);
+            position: relative;
+            top: 1%;
+            height: 85%;
+            left: 0.5vw;
+            bottom: 30%;
+            width: 30.7vw;
+        }
+
+        main form upper text input[type=text] {
+
+            font-size: medium;
+            text-align: center;
+            background-color: white;
+            border: 1px solid rgb(211, 207, 207);
+            ;
+            border-radius: 20px;
+
+            position: relative;
+            top: 1.5vh;
+            left: 1.7vw;
+            height: 55%;
+            width: 80%;
+        }
+
+        main form upper dp img {
+            position: relative;
+            float: left;
+            top: 5px;
+            left: 1vw;
+            color: rgb(153, 152, 150);
+            height: 45px;
+            width: 45px;
+            background-color: #bbb;
+            border-radius: 50%;
+            border: 1px solid rgb(253, 252, 250);
+            border-radius: 50%;
+            background-color: rgb(193, 190, 190);
+        }
+
+
+
+        main form lower #file-input-label {
+
+            background-color: rgb(23, 218, 52);
+            color: white;
+            position: relative;
+            top: 1.3vh;
+            left: 20px;
+            width: 50%;
+            font-size: small;
+            padding: 10px 15px;
+            border: 2px solid rgb(254, 255, 255);
+            border-radius: 10px;
+        }
+
+        main form lower #file-input {
+
+            display: none;
+            position: relative;
+            left: 1%;
+        }
+
+        main form lower input[type=submit] {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+            background-color: rgb(59, 59, 244);
+            color: antiquewhite;
+            position: relative;
+            left: 55%;
+            top: 1.2vh;
+            font-size: small;
+            padding: 10px 15px;
+            border: 2px solid rgb(254, 255, 255);
+            border-radius: 10px;
+            width: 8vw;
+        }
+
+        posts {
+            display: block;
+            padding: 3px 7px 3px 7px;
+        }
+
+        .post {
+
+            margin-bottom: 30px;
+            padding-top: 10px;
+            display: grid;
+            box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
+            background-color: white;
+            position: relative;
+            top: 130px;
+            height: 60vh;
+            width: 70vh;
+            left: 35.3vw;
+            border-radius: 10px;
+        }
+
+        posts .post post-header {
+            position: relative;
+            border-radius: 4px;
+            left: 0.8vw;
+            height: 9vh;
+            width: 30vw;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: rgb(240, 237, 237);
+        }
+
+        posts .post post-body {
+            position: relative;
+            border-radius: 4px;
+            top: 4px;
+            left: 0.8vw;
+            height: 48vh;
+            width: 30vw;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: rgb(240, 237, 237);
+        }
+
+        posts post post-header img {
+            position: relative;
+            float: left;
+            top: 8px;
+            left: 1vw;
+            color: rgb(153, 152, 150);
+            height: 45px;
+            width: 45px;
+            background-color: #bbb;
+            border-radius: 50%;
+            border: 1px solid rgb(253, 252, 250);
+            border-radius: 50%;
+            background-color: rgb(193, 190, 190);
+        }
+
+        posts post post-body img {
+            border-radius: 4px;
+            background-color: rgb(193, 190, 190);
+        }
+
+        posts post post-header post-name {
+            font-size: medium;
+            position: relative;
+            font-size: 20px;
+            top: 3vh;
+            left: 6%;
+            color: rgb(107, 104, 104);
+            border-color: white;
+        }
+    </style>
 
 
 </head>
@@ -25,16 +282,16 @@
                 <a href="#Messages">Messages</a>
             </ul>
 
-            <form>
-                <button type="submit">p</button>
+            <form action="/logout" method="post">
+                <button type="submit">Log Out</button>
             </form>
         </nav>
     </header>
     <main>
-        <form>
+        <form action="/new_post" method="post" enctype="multipart/form-data">
             <upper>
                 <dp>
-                    <img src="/FaceBook_Clone/uploads/people.jpg" alt="sorry" height="40px" width="40px">
+                    <img src="static\people.jpg" alt="sorry" height="40px" width="40px">
                 </dp>
                 <text>
                     <input type="text" placeholder="What's going on">
@@ -51,39 +308,25 @@
     </main>
 
     <posts>
+     {% for post in posts  %}
         <post class="post">
             <post-header>
                 <dp>
-                    <img src="/FaceBook_Clone/uploads/people.jpg" alt="sorry" height="40px" width="40px">
+                    <img src="{{post['dp_url']}}" alt="sorry" height="40px" width="40px">
                 </dp>
                 <post-name>
-                    Siddhartha chakraborty
+                    {{post['first_name']}} {{post['last_name']}}
                 </post-name>
             </post-header>
             <post-body>
-                <img src="/FaceBook_Clone/uploads/srk.jpg" height="335px" width="460px" alt="sorry">
+                <img src="{{post['post_url']}}" height="335px" width="460px" alt="sorry">
             </post-body>
             <post-footer>
 
             </post-footer>
         </post>
-
-        <post class="post">
-            <post-header>
-                <dp>
-                    <img src="/FaceBook_Clone/uploads/people.jpg" alt="sorry" height="40px" width="40px">
-                </dp>
-                <post-name>
-                    Siddhartha chakraborty
-                </post-name>
-            </post-header>
-            <post-body>
-                <img src="/FaceBook_Clone/uploads/salman.jpg" height="335px" width="460px" alt="sorry">
-            </post-body>
-            <post-footer>
-
-            </post-footer>
-        </post>
+      {% endfor %}
+       
     </posts>
 </body>
 
