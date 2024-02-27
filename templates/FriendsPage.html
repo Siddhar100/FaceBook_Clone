@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBook</title>
+
+    <style>
+        html {
+            background-color: rgb(240, 237, 237);
+        }
+
+        * {
+            margin: 0;
+        }
+
+        header {
+            box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
+            position: fixed;
+            background-color: rgb(59, 59, 244);
+            z-index: 3;
+            height: 10vh;
+            width: 100%;
+        }
+
+        header nav scarch {
+
+            float: left;
+        }
+
+        header nav scarch form input[type=text] {
+            border: 2px solid rgb(253, 252, 250);
+            border-radius: 7px;
+            position: relative;
+            background-color: white;
+            height: 4vh;
+            width: 15vw;
+            top: 3vh;
+            left: 2vw;
+        }
+
+        header nav scarch form input[type=submit] {
+            color: rgb(153, 152, 150);
+            font-size: small;
+            border: 2px solid rgb(253, 252, 250);
+            border-radius: 7px;
+            position: relative;
+            background-color: white;
+            height: 5vh;
+            width: 5vw;
+            top: 3vh;
+            left: 2.5vw;
+        }
+
+        header nav ul a {
+            padding-top: 1vh;
+            font-size: large;
+            text-decoration: none;
+            padding-left: 5vw;
+            color: white;
+            position: relative;
+            top: 4vh;
+            left: 15vw;
+        }
+
+
+
+        header nav form button {
+            font-size: 10px;
+            position: fixed;
+            color: white;
+            height: 40px;
+            width: 40px;
+            background-color: rgb(23, 218, 52);
+            border-radius: 50%;
+            border: 1px solid rgb(253, 252, 250);
+            border-radius: 50%;
+            left: 95%;
+            top: 15px;
+
+        }
+
+        main {
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 0 rgba(0.1, 0.1, 0.1, 0.1);
+            background-color: white;
+            position: relative;
+            top: 20vh;
+            left: 36vw;
+            height: 15vh;
+            width: 30vw;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        main img {
+            position: relative;
+            float: left;
+            top: 3.6vh;
+            left: 2vw;
+            color: rgb(153, 152, 150);
+            height: 45px;
+            width: 45px;
+            background-color: #bbb;
+            border-radius: 50%;
+            border: 2px solid rgb(188, 187, 184);
+            border-radius: 50%;
+            background-color: rgb(193, 190, 190);
+
+        }
+
+        main h3 {
+            font-size: larger;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(87, 82, 82);
+            position: relative;
+            top: 5.2vh;
+            left: 3vw;
+        }
+
+        main form input[type=submit] {
+            background-color: rgb(76, 76, 228);
+            font-size: small;
+            color: white;
+            height: 5vh;
+            width: 5.5vw;
+            margin-bottom: 3vh;
+            position: relative;
+            top: 1.5vh;
+            left: 65%;
+            bottom: 5px;
+            border-radius: 7px;
+            text-align: center;
+            border: 1px solid rgb(91, 91, 242);
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <scarch>
+                <form>
+                    <input type="text" name="scrch" placeholder="Search FaceBook">
+                    <input type="submit" value="Search">
+                </form>
+            </scarch>
+            <ul>
+                <a href="/home_page">Home</a>
+                <a href="/Peoples_page">People</a>
+                <a href="#Messages">Messages</a>
+            </ul>
+
+            <form action="/logout" method="post">
+                <button type="submit">Log Out</button>
+            </form>
+        </nav>
+    </header>
+    {% for i in range(30) %}
+    <main>
+        <img src="static/people.jpg" alt="sorry" height="50px" width="50px">
+        <h3>Siddhartha chakraborty</h3>
+        <form action="/follow_people" method="post">
+            <input type="submit" value="follow">
+        </form>
+    </main>
+    {% endfor %}
+    
+</body>
+
+</html>

@@ -33,13 +33,20 @@ class user_model():
         if form_password == user_password:
             session["mobile_no"] = form_mobile
             session["user_dp"] = user_dp
-            self.cur.execute(f"SELECT * FROM user_post;")
+            self.cur.execute(f"SELECT * FROM user_post order by si_no asc;")
             posts = self.cur.fetchall()
             return render_template('HomePage.html',posts=posts)
         else:
             return "Sorry!"
 
+    def dash_board(self):
+        self.cur.execute(f"SELECT * FROM user_post order by si_no asc;")
+        posts = self.cur.fetchall()
+        return render_template('HomePage.html',posts=posts)
     
+    def peoples_page(self):
+        return render_template('FriendsPage.html')
+
     def signUpPage(self):
         return render_template('SignUpPage.html')
     
@@ -59,7 +66,7 @@ class user_model():
         dp = session.get('user_dp')
         query = f"INSERT INTO user_post (dp_url,first_name,last_name,post_url) values('{dp}','{first_name}','{last_name}','{file_name}');"
         self.cur.execute(query)
-        self.cur.execute(f"SELECT * FROM user_post;")
+        self.cur.execute(f"SELECT * FROM user_post order by si_no asc;")
         posts = self.cur.fetchall()
         return render_template('HomePage.html',posts=posts)
 

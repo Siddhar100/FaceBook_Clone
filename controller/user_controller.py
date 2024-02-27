@@ -8,6 +8,14 @@ obj = user_model()
 def home_page():
     return obj.user_home_page()
 
+@app.route('/home_page')
+def dash_board():
+    return obj.dash_board()
+
+@app.route('/Peoples_page')
+def peoples_page():
+    return obj.peoples_page()
+
 @app.route('/user_auth',methods=['GET','POST'])
 def user_auth():
     if request.method == 'POST':
