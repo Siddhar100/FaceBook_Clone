@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBook</title>
+    <style>
+        html {
+            background-color: rgb(240, 237, 237);
+        }
+
+        * {
+            margin: 0;
+        }
+
+        main {
+            z-index: 2;
+            position: fixed;
+        }
+
+
+        main h1 {
+            align-items: center;
+            display: inline;
+            position: fixed;
+            top: 3vh;
+            left: 42vw;
+            color: rgb(76, 76, 228);
+            font-style: italic;
+            font-size: 8vh;
+        }
+
+        main .form_background {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+            display: grid;
+            border-radius: 10px;
+            position: relative;
+            top: 15vh;
+            left: 35vw;
+            z-index: 1;
+            background-color: white;
+            height: 70vh;
+            width: 30vw;
+        }
+
+        main input[type=text],
+        [type=password] {
+            font-size: small;
+            height: 4%;
+            width: 50%;
+            margin-bottom: 3vh;
+            position: relative;
+            top: 7vh;
+            left: 2.5vw;
+            bottom: 5px;
+            border-radius: 7px;
+            text-align: center;
+            border: 1px solid rgb(211, 207, 207);
+            padding: 2vh 5vw;
+
+        }
+
+        main user_form form input[type=submit] {
+            background-color: rgb(23, 218, 52);
+            border: 1px solid rgb(35, 228, 64);
+            font-size: medium;
+            color: white;
+            height: 10%;
+            width: 85%;
+            margin-bottom: 3vh;
+            position: relative;
+            top: 45vh;
+            left:2.5vw;
+            bottom: 5px;
+            border-radius: 7px;
+            text-align: center;
+
+            padding: 2vh 8vw;
+        }
+
+        main user_form form #dp-input-label {
+
+            background-color: rgb(193, 190, 190);
+            color: white;
+            position: relative;
+            top: 20vh;
+            left: 7vw;
+            width: 50%;
+            font-size: large;
+            padding: 100px 100px;
+            border: 2px solid rgb(193, 190, 190);
+            border-radius: 50%;
+        }
+
+        main user_form form #dp-input {
+
+            display: none;
+            position: relative;
+            left: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>FaceBook</h1>
+        <user_form class="form_background">
+            <form action="/upload_dp" method="post" enctype="multipart/form-data">
+
+                <input type="file" id="dp-input" name="dp-input" />
+
+                <label id="dp-input-label" for="dp-input">Photo</label>
+                <input type="submit" value="Upload">
+            </form>
+
+    </main>
+</body>
+
+</html>

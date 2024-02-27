@@ -291,7 +291,7 @@
         <form action="/new_post" method="post" enctype="multipart/form-data">
             <upper>
                 <dp>
-                    <img src="static\people.jpg" alt="sorry" height="40px" width="40px">
+                    <img src="{{session.get('user_dp')}}" alt="sorry" height="40px" width="40px">
                 </dp>
                 <text>
                     <input type="text" placeholder="What's going on">
@@ -308,7 +308,7 @@
     </main>
 
     <posts>
-     {% for post in posts  %}
+        {% for post in posts %}
         <post class="post">
             <post-header>
                 <dp>
@@ -325,8 +325,8 @@
 
             </post-footer>
         </post>
-      {% endfor %}
-       
+        {% endfor %}
+
     </posts>
 </body>
 

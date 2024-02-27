@@ -1,5 +1,6 @@
 from flask import Flask,request
 from app import app
+import time
 from model.user_model import user_model
 
 obj = user_model()
@@ -25,6 +26,19 @@ def signUpPage():
 def user_create_account():
     if request.method == 'POST':
        return obj.user_create_account(request.form)
+
+@app.route('/upload_dp',methods=['GET','POST'])
+def upload_dp():
+    if request.method == 'POST':
+       file = request.files['dp-input']
+       tm = str(time.time())
+       tm_decimal = tm.split('.')[0]
+       file_name = f"{tm_decimal}_{file.filename}"
+       file_location = f"static/{file_name}"
+       file.save(file_location)
+       print(f"file_location: {file_location}")
+       return obj.upload_dp(file_location)
+
 
 @app.route('/new_post',methods=['GET','POST'])
 def new_post():
