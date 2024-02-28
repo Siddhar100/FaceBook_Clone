@@ -307,6 +307,7 @@
         </form>
     </main>
 
+{% if followees  %}
     <posts>
         {% for post in posts %}
         <post class="post">
@@ -326,8 +327,8 @@
             </post-footer>
         </post>
         {% endfor %}
-
     </posts>
+{% endif %}
 </body>
 
 </html>
