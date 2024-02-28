@@ -29,23 +29,41 @@ class user_model():
         result = self.cur.fetchall()
         user_password = result[0]['password']
         user_dp = result[0]['dp_url']
+        print(user_dp)
         print(user_password)
         if form_password == user_password:
             session["mobile_no"] = form_mobile
-            session["user_dp"] = user_dp
+            session["user_dp"] =  user_dp 
+            dp =  user_dp 
             self.cur.execute(f"SELECT * FROM user_post order by si_no asc;")
             posts = self.cur.fetchall()
-            return render_template('HomePage.html',posts=posts)
+            return render_template('HomePage.html',posts=posts,dp=dp)
         else:
             return "Sorry!"
 
     def dash_board(self):
         self.cur.execute(f"SELECT * FROM user_post order by si_no asc;")
         posts = self.cur.fetchall()
-        return render_template('HomePage.html',posts=posts)
+        dp = session.get('user_dp')
+        return render_template('HomePage.html',posts=posts,dp=dp)
     
     def peoples_page(self):
-        return render_template('FriendsPage.html')
+        self.cur.execute(f"select followee from followers where follower = '{session.get('mobile_no')}' ;")
+        user_info = self.cur.fetchall()
+        if len(user_info) == 0:
+            self.cur.execute(f"select mobile_no,dp_url,first_name,last_name from user_data where mobile_no  not  in ({session.get('mobile_no')});")
+            users_data = self.cur.fetchall()
+            return render_template('FriendsPage.html',users_data=users_data)
+        else:
+            not_include = ""
+            for user in user_info:
+               not_include = not_include + "'" + str(user['followee']) + "',"
+            peoples = not_include[:len(not_include)-1]
+            print(peoples)
+            self.cur.execute(f"select mobile_no,dp_url,first_name,last_name from user_data where mobile_no not in ({peoples},{session.get('mobile_no')}) ;")
+            users_data = self.cur.fetchall()
+            return render_template('FriendsPage.html',users_data=users_data)
+      
 
     def signUpPage(self):
         return render_template('SignUpPage.html')
@@ -68,8 +86,27 @@ class user_model():
         self.cur.execute(query)
         self.cur.execute(f"SELECT * FROM user_post order by si_no asc;")
         posts = self.cur.fetchall()
-        return render_template('HomePage.html',posts=posts)
+        return render_template('HomePage.html',posts=posts,dp=dp)
 
     def upload_dp(self,file_location):
         self.cur.execute(f"UPDATE user_data set dp_url = '{file_location}' where dp_url = 'blank' ;")
         return render_template('LoginPage.html')
+    
+    def follow_people(self,mobile_no):
+        self.cur.execute(f"insert into followers (follower,followee) values({session.get('mobile_no')},'{mobile_no}');")
+        self.cur.execute(f"select followee from followers where follower = {session.get('mobile_no')} ;")
+        user_info = self.cur.fetchall()
+        if len(user_info) == 0:
+            self.cur.execute(f"select mobile_no,dp_url,first_name,last_name from user_data where mobile_no  not in ({session.get('mobile_no')});")
+            users_data = self.cur.fetchall()
+            return render_template('FriendsPage.html',users_data=users_data)
+        else:
+            not_include = ""
+            for user in user_info:
+               not_include = not_include + "'" + str(user['followee']) + "',"
+            peoples = not_include[:len(not_include)-1]
+            print(peoples)
+            self.cur.execute(f"select mobile_no,dp_url,first_name,last_name from user_data where mobile_no not in ({peoples},{session.get('mobile_no')}) ;")
+            users_data = self.cur.fetchall()
+            print(users_data)
+            return render_template('FriendsPage.html',users_data=users_data)

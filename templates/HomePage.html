@@ -291,7 +291,7 @@
         <form action="/new_post" method="post" enctype="multipart/form-data">
             <upper>
                 <dp>
-                    <img src="{{session.get('user_dp')}}" alt="sorry" height="40px" width="40px">
+                    <img src="{{ url_for('static', filename=dp) }}" alt="sorry" height="40px" width="40px">
                 </dp>
                 <text>
                     <input type="text" placeholder="What's going on">
@@ -312,14 +312,14 @@
         <post class="post">
             <post-header>
                 <dp>
-                    <img src="{{post['dp_url']}}" alt="sorry" height="40px" width="40px">
+                    <img src="{{ url_for('static', filename=post['dp_url']) }}" alt="sorry" height="40px" width="40px">
                 </dp>
                 <post-name>
                     {{post['first_name']}} {{post['last_name']}}
                 </post-name>
             </post-header>
             <post-body>
-                <img src="{{post['post_url']}}" height="335px" width="460px" alt="sorry">
+                <img src="{{url_for('static', filename=post['post_url'])}}" height="335px" width="460px" alt="sorry">
             </post-body>
             <post-footer>
 

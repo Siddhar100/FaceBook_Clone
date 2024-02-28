@@ -44,8 +44,8 @@ def upload_dp():
        file_name = f"{tm_decimal}_{file.filename}"
        file_location = f"static/{file_name}"
        file.save(file_location)
-       print(f"file_location: {file_location}")
-       return obj.upload_dp(file_location)
+       print(f"file_location: {file_name}")
+       return obj.upload_dp(file_name)
 
 
 @app.route('/new_post',methods=['GET','POST'])
@@ -54,10 +54,12 @@ def new_post():
         file = request.files['file-input']
         file_name = f"static/{file.filename}"
         file.save(file_name)
-        return obj.new_post(file_name)
+        return obj.new_post(file.filename)
 
 
-
+@app.get('/follow_people/<mobile_no>')
+def follow_people(mobile_no):
+       return obj.follow_people(mobile_no)
 
 
 @app.route('/test')

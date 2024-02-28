@@ -85,7 +85,7 @@
             box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 0 rgba(0.1, 0.1, 0.1, 0.1);
             background-color: white;
             position: relative;
-            top: 20vh;
+            top: 16vh;
             left: 36vw;
             height: 15vh;
             width: 30vw;
@@ -157,11 +157,11 @@
             </form>
         </nav>
     </header>
-    {% for i in range(30) %}
+    {% for user in users_data %}
     <main>
-        <img src="static/people.jpg" alt="sorry" height="50px" width="50px">
-        <h3>Siddhartha chakraborty</h3>
-        <form action="/follow_people" method="post">
+        <img src="{{ url_for('static', filename=user['dp_url']) }}" alt="sorry" height="50px" width="50px">
+        <h3>{{user['first_name']}} {{user['last_name']}}</h3>
+        <form action="/follow_people/{{user['mobile_no']}}" >
             <input type="submit" value="follow">
         </form>
     </main>
