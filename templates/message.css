@@ -72,12 +72,12 @@ header nav form button {
 }
 
 main {
-   
-   display: grid;   
+
+    display: grid;
 }
 
 main peoples {
-    
+
     box-shadow: 2px 1px 1px 1px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
     position: relative;
     top: 15vh;
@@ -114,7 +114,7 @@ main peoples header_element {
     width: 28vw;
 }
 
-main  header_element {
+main header_element {
     position: fixed;
     top: 16vh;
     left: 34vw;
@@ -131,7 +131,7 @@ main peoples header_element h2 {
     text-align: center;
 }
 
-main  header_element img {
+main header_element img {
     float: left;
     position: relative;
     top: 2vh;
@@ -139,7 +139,7 @@ main  header_element img {
     left: 3vw;
 }
 
-main  header_element h3 {
+main header_element h3 {
     color: white;
     float: left;
     position: relative;
@@ -148,7 +148,7 @@ main  header_element h3 {
     left: 4.5vw;
 }
 
-main  body_element {
+main body_element {
     position: fixed;
     top: 28vh;
     left: 34vw;
@@ -156,19 +156,21 @@ main  body_element {
     height: 53vh;
     width: 64.3%;
     border-radius: 10px;
-}
-
-.my_scroll_div {
-    position: relative;
-    top:15vh;
-    Width:30vw;
-    Height:65vh;
     Overflow-y: scroll;
     overflow-x: hidden;
 }
 
-main peoples  body_element {
-   
+.my_scroll_div {
+    position: relative;
+    top: 15vh;
+    Width: 30vw;
+    Height: 65vh;
+    Overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main peoples body_element {
+
     position: relative;
     top: 32vh;
     left: 0vw;
@@ -180,7 +182,7 @@ main peoples  body_element {
 }
 
 
-main peoples  body_element img {
+main peoples body_element img {
     float: left;
     position: relative;
     top: 2vh;
@@ -188,9 +190,9 @@ main peoples  body_element img {
     left: 1.5vw;
 }
 
-main peoples  body_element form input[type=submit] {
+main peoples body_element form input[type=submit] {
     position: relative;
-    
+
     top: 3vh;
     left: 6vw;
     background-color: rgb(75, 75, 238);
@@ -201,16 +203,16 @@ main peoples  body_element form input[type=submit] {
     border-color: 10px solid white;
 }
 
-main peoples  body_element h3 {
+main peoples body_element h3 {
     color: white;
-   
+
     position: relative;
     top: 3.2vh;
     border-radius: 50%;
     left: 3vw;
 }
 
-main  buttom_element {
+main buttom_element {
     position: fixed;
     top: 83vh;
     left: 34vw;
@@ -219,7 +221,8 @@ main  buttom_element {
     width: 64.3%;
     border-radius: 10px;
 }
-main peoples people{
+
+main peoples people {
     border-radius: 10px;
     float: left;
     color: white;
@@ -231,25 +234,75 @@ main peoples people{
     background-color: rgb(212, 207, 207);
     margin-bottom: 10px;
 }
-main peoples people img{
+
+main peoples people img {
     border-radius: 50%;
     position: relative;
     top: 1vh;
-    left:1vw;
+    left: 1vw;
 }
-main peoples people h3{
+
+main peoples people h3 {
     position: relative;
     top: -4vh;
-    left:4.5vw;
+    left: 4.5vw;
 }
-main peoples people form  input[type=submit]{
+
+main peoples people form input[type=submit] {
     color: white;
     background-color: rgb(80, 83, 237);
     border: 2px solid rgb(80, 83, 237);
     position: relative;
     top: -7.4vh;
-    left:20vw;
+    left: 20vw;
     height: 4vh;
     width: 5vw;
     border-radius: 5px;
+}
+
+main body_element message{
+    size: small;
+    display: block;
+    border-radius: 9px;
+    padding: 2vh 20vw;
+    position: relative;
+    top: 3vh;
+    left: 7vw;
+    background-color: white;
+    height: 2vh;
+    width: 10vw;
+    margin-bottom: 10px;
+}
+main buttom_element form input[type=text]{
+    float: left;
+    text-align: left;
+    size: small;
+    display: block;
+    border-radius: 20px;
+    border: 2px solid white;
+    padding: 2vh 20vw;
+    position: relative;
+    top: 2vh;
+    left: 1vw;
+    background-color: white;
+    height: 2vh;
+    width: 16vw;
+    margin-bottom: 10px;
+}
+main buttom_element form input[type=submit]{
+    color: white;
+    text-align: left;
+    size: small;
+    display: block;
+    border-radius: 20px;
+    border: 2px solid rgb(100, 228, 106);
+    padding-left: 15px;
+    padding-right: 3px;
+    position: relative;
+    top: 2.5vh;
+    left: 2vw;
+    background-color: rgb(100, 228, 106);
+    height: 5vh;
+    width: 5vw;
+    margin-bottom: 10px;
 }
