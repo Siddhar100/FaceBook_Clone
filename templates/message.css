@@ -1,0 +1,255 @@
+html {
+    background-color: rgb(240, 237, 237);
+}
+
+* {
+    margin: 0;
+}
+
+header {
+    box-shadow: 1px 4px 4px 3px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
+    position: fixed;
+    background-color: rgb(59, 59, 244);
+    z-index: 5;
+    height: 10vh;
+    width: 100%;
+}
+
+header nav scarch {
+
+    float: left;
+}
+
+header nav scarch form input[type=text] {
+    border: 2px solid rgb(253, 252, 250);
+    border-radius: 7px;
+    position: relative;
+    background-color: white;
+    height: 4vh;
+    width: 15vw;
+    top: 3vh;
+    left: 2vw;
+}
+
+header nav scarch form input[type=submit] {
+    color: rgb(153, 152, 150);
+    font-size: small;
+    border: 2px solid rgb(253, 252, 250);
+    border-radius: 7px;
+    position: relative;
+    background-color: white;
+    height: 5vh;
+    width: 5vw;
+    top: 3vh;
+    left: 2.5vw;
+}
+
+header nav ul a {
+    padding-top: 1vh;
+    font-size: large;
+    text-decoration: none;
+    padding-left: 5vw;
+    color: white;
+    position: relative;
+    top: 4vh;
+    left: 15vw;
+}
+
+
+
+header nav form button {
+    font-size: 10px;
+    position: fixed;
+    color: white;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(23, 218, 52);
+    border-radius: 50%;
+    border: 1px solid rgb(253, 252, 250);
+    border-radius: 50%;
+    left: 95%;
+    top: 15px;
+}
+
+main {
+   
+   display: grid;   
+}
+
+main peoples {
+    
+    box-shadow: 2px 1px 1px 1px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
+    position: relative;
+    top: 15vh;
+    background-color: white;
+    height: 80vh;
+    width: 30vw;
+    left: 2vw;
+    border-radius: 10px;
+    Overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+main chats {
+
+    box-shadow: 2px 1px 1px 1px rgba(0.1, 0.1, 0.1, 0.1), 1px 1px 1px 0 rgba(0.1, 0.1, 0.1, 0.1);
+    position: relative;
+    background-color: white;
+    top: 15vh;
+    height: 80vh;
+    width: 66vw;
+    left: 33vw;
+    border-radius: 10px;
+
+}
+
+main peoples header_element {
+    position: fixed;
+    top: 16vh;
+    border-radius: 10px;
+    left: 3vw;
+    background-color: rgb(212, 207, 207);
+    height: 10vh;
+    width: 28vw;
+}
+
+main  header_element {
+    position: fixed;
+    top: 16vh;
+    left: 34vw;
+    background-color: rgb(212, 207, 207);
+    height: 10vh;
+    width: 64.3%;
+    border-radius: 10px;
+}
+
+main peoples header_element h2 {
+    color: white;
+    position: relative;
+    top: 3vh;
+    text-align: center;
+}
+
+main  header_element img {
+    float: left;
+    position: relative;
+    top: 2vh;
+    border-radius: 50%;
+    left: 3vw;
+}
+
+main  header_element h3 {
+    color: white;
+    float: left;
+    position: relative;
+    top: 3vh;
+    border-radius: 50%;
+    left: 4.5vw;
+}
+
+main  body_element {
+    position: fixed;
+    top: 28vh;
+    left: 34vw;
+    background-color: rgb(212, 207, 207);
+    height: 53vh;
+    width: 64.3%;
+    border-radius: 10px;
+}
+
+.my_scroll_div {
+    position: relative;
+    top:15vh;
+    Width:30vw;
+    Height:65vh;
+    Overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main peoples  body_element {
+   
+    position: relative;
+    top: 32vh;
+    left: 0vw;
+    background-color: rgb(18, 17, 17);
+    height: 10vh;
+    width: 6vw;
+    border-radius: 10px;
+    border-color: 2px solid black;
+}
+
+
+main peoples  body_element img {
+    float: left;
+    position: relative;
+    top: 2vh;
+    border-radius: 50%;
+    left: 1.5vw;
+}
+
+main peoples  body_element form input[type=submit] {
+    position: relative;
+    
+    top: 3vh;
+    left: 6vw;
+    background-color: rgb(75, 75, 238);
+    color: white;
+    border-radius: 9px;
+    height: 4vh;
+    width: 5vw;
+    border-color: 10px solid white;
+}
+
+main peoples  body_element h3 {
+    color: white;
+   
+    position: relative;
+    top: 3.2vh;
+    border-radius: 50%;
+    left: 3vw;
+}
+
+main  buttom_element {
+    position: fixed;
+    top: 83vh;
+    left: 34vw;
+    background-color: rgb(212, 207, 207);
+    height: 10vh;
+    width: 64.3%;
+    border-radius: 10px;
+}
+main peoples people{
+    border-radius: 10px;
+    float: left;
+    color: white;
+    position: relative;
+    top: 2vh;
+    left: 1vw;
+    height: 9vh;
+    width: 27vw;
+    background-color: rgb(212, 207, 207);
+    margin-bottom: 10px;
+}
+main peoples people img{
+    border-radius: 50%;
+    position: relative;
+    top: 1vh;
+    left:1vw;
+}
+main peoples people h3{
+    position: relative;
+    top: -4vh;
+    left:4.5vw;
+}
+main peoples people form  input[type=submit]{
+    color: white;
+    background-color: rgb(80, 83, 237);
+    border: 2px solid rgb(80, 83, 237);
+    position: relative;
+    top: -7.4vh;
+    left:20vw;
+    height: 4vh;
+    width: 5vw;
+    border-radius: 5px;
+}
