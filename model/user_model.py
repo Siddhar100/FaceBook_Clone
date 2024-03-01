@@ -135,3 +135,46 @@ class user_model():
             users_data = self.cur.fetchall()
             print(users_data)
             return render_template('FriendsPage.html',users_data=users_data)
+        
+
+    def messages(self,id):
+        visiblity = True
+        if id == '202':
+            visiblity = False
+            self.cur.execute("select * from user_data;")
+            user_info = self.cur.fetchall()
+            recciver_info = None
+            return render_template('Message.html',visiblity=visiblity,user_info=user_info,recciver_info=recciver_info)
+
+        else:
+            self.cur.execute("select * from user_data;")
+            user_info = self.cur.fetchall()
+            self.cur.execute(f"select * from user_data where mobile_no = '{id}';")
+            recciver_info = self.cur.fetchall()
+            print(recciver_info)
+            recciver_mobile = recciver_info[0]['mobile_no']
+            dp_image = recciver_info[0]['dp_url']
+            full_name = recciver_info[0]['first_name'] + " " + recciver_info[0]['last_name']
+            self.cur.execute(f"select * from messages where ( sender= {session.get('mobile_no')} && recciver = '{id}') || ( sender= '{id}' && recciver = {session.get('mobile_no')});")
+            all_messages = self.cur.fetchall()
+            return render_template('Message.html',visiblity=visiblity,user_info=user_info,dp_image=dp_image,full_name=full_name,all_messages=all_messages,recciver_mobile=recciver_mobile)
+
+    def send_msg(self,data,mobile):
+        msg = data['msg']
+        visiblity=True
+        self.cur.execute(f"insert into messages (sender,recciver,message) values({session.get('mobile_no')},'{mobile}','{msg}');")
+        print(f"insert into messages (sender,recciver,message) values({session.get('mobile_no')},'{mobile}','{msg}');")
+        self.cur.execute("select * from user_data;")
+        user_info = self.cur.fetchall()
+        self.cur.execute(f"select * from user_data where mobile_no = '{mobile}';")
+        recciver_info = self.cur.fetchall()
+        print(recciver_info)
+        recciver_mobile = recciver_info[0]['mobile_no']
+        dp_image = recciver_info[0]['dp_url']
+        full_name = recciver_info[0]['first_name'] + " " + recciver_info[0]['last_name']
+        self.cur.execute(f"select * from messages where ( sender= {session.get('mobile_no')} && recciver = '{mobile}') || ( sender= '{mobile}' && recciver = {session.get('mobile_no')});")
+        all_messages = self.cur.fetchall()
+        return render_template('Message.html',visiblity=visiblity,user_info=user_info,dp_image=dp_image,full_name=full_name,all_messages=all_messages,recciver_mobile=recciver_mobile)
+
+
+        

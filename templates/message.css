@@ -260,7 +260,7 @@ main peoples people form input[type=submit] {
     border-radius: 5px;
 }
 
-main body_element message{
+main body_element message {
     size: small;
     display: block;
     border-radius: 9px;
@@ -273,7 +273,8 @@ main body_element message{
     width: 10vw;
     margin-bottom: 10px;
 }
-main buttom_element form input[type=text]{
+
+main buttom_element form input[type=text] {
     float: left;
     text-align: left;
     size: small;
@@ -289,7 +290,8 @@ main buttom_element form input[type=text]{
     width: 16vw;
     margin-bottom: 10px;
 }
-main buttom_element form input[type=submit]{
+
+main buttom_element form input[type=submit] {
     color: white;
     text-align: left;
     size: small;

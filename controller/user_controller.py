@@ -61,6 +61,14 @@ def new_post():
 def follow_people(mobile_no):
        return obj.follow_people(mobile_no)
 
+@app.route('/Messages/<id>')
+def messages(id):
+    return obj.messages(id)
+
+@app.route('/new_msg/<mobile>',methods=['GET','POST'])
+def send_msg(mobile):
+    if request.method == 'POST':
+        return obj.send_msg(request.form,mobile)
 
 @app.route('/test')
 def test():
