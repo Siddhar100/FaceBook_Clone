@@ -275,7 +275,21 @@
             padding: 2vh 20vw;
             position: relative;
             top: 3vh;
-            left: 7vw;
+            left: 13vw;
+            background-color: white;
+            height: 2vh;
+            width: 10vw;
+            margin-bottom: 10px;
+        }
+
+        main body_element sender_message {
+            size: small;
+            display: block;
+            border-radius: 9px;
+            padding: 2vh 20vw;
+            position: relative;
+            top: 3vh;
+            left: 1vw;
             background-color: white;
             height: 2vh;
             width: 10vw;
@@ -360,9 +374,15 @@
         </header_element>
         <body_element>
             {% for msg in all_messages %}
+            {% if msg['sender'] == session.get('mobile_no') %}
             <message>
                 {{msg['message']}}
             </message>
+            {% else %}
+            <sender_message>
+                {{msg['message']}}
+            </sender_message>
+            {% endif %}
             {% endfor %}
         </body_element>
         <buttom_element>
