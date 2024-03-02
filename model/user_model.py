@@ -117,6 +117,10 @@ class user_model():
             errors.append("Please confirm Password!")
         elif data['password'] != data['confirm_password']:
             errors.append("Type Password correctly!")
+        self.cur.execute(f"select * from user_data where mobile_no = '{data['mobile_no']}';")
+        user_exists = self.cur.fetchall()
+        if len(user_exists) > 0:
+            errors.append("This number already registered!")
         if errors:
             return render_template('SignUpPage.html',errors=errors)
         else:
