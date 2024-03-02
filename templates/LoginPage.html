@@ -93,6 +93,12 @@ new_user input[type=submit]{
     border: 1px solid rgb(35, 228, 64);
     padding : 2vh 8vw;
 }
+main user_form ul li{
+    color: red;
+    position: relative;
+    top: 3vh;
+   left: 8.5vw;
+}
     </style>
 </head>
 
@@ -101,6 +107,13 @@ new_user input[type=submit]{
         <h1>FaceBook</h1>
         <h2>Facebook helps you connect and share <br> with the people in your life.</h2>
         <user_form class="form_background">
+        {% if errors %}
+            <ul type="none">
+                {% for error in errors %}
+                  <li>{{error}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
             <form action="/user_auth" method="post">
                 <input type="text" name="mobile_no" placeholder="Mobile no">
 

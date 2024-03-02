@@ -23,8 +23,15 @@ class user_model():
         return render_template('LoginPage.html')
 
     def user_auth(self,data):
+        errors = []
         form_mobile = data['mobile_no']
         form_password = data['password']
+        if not form_mobile:
+            errors.append("Enter Mobile no!")
+        if not form_password:
+            errors.append("Enter Password!")
+        if errors:
+            return render_template('LoginPage.html',errors=errors)
         self.cur.execute(f"SELECT * FROM user_data where mobile_no = '{form_mobile}';")
         result = self.cur.fetchall()
         user_password = result[0]['password']
@@ -50,7 +57,8 @@ class user_model():
                 posts = self.cur.fetchall()
                 return render_template('HomePage.html',posts=posts,dp=dp,followees=followees)
         else:
-            return "Sorry!"
+            errors.append("Password mismatch!")
+            return render_template('LoginPage.html',errors=errors)
 
     def dash_board(self):
         self.cur.execute(f"SELECT * FROM user_data where mobile_no = {session.get('mobile_no')};")
@@ -96,9 +104,25 @@ class user_model():
         return render_template('LoginPage.html')
     
     def user_create_account(self,data):
-        query = f"INSERT INTO user_data (mobile_no,first_name,last_name,password,dp_url) values('{data['mobile_no']}','{data['first_name']}','{data['last_name']}','{data['password']}','blank');"
-        self.cur.execute(query)
-        return render_template('DpPage.html')
+        errors = []
+        if not data['first_name']:
+            errors.append("Enter First Name!")
+        if not data['last_name']:
+            errors.append("Enter Last Name!")
+        if not data['mobile_no']:
+            errors.append("Enter mobile no!")
+        if not data['password']:
+            errors.append('Set Password!')
+        if not data['confirm_password']:
+            errors.append("Please confirm Password!")
+        elif data['password'] != data['confirm_password']:
+            errors.append("Type Password correctly!")
+        if errors:
+            return render_template('SignUpPage.html',errors=errors)
+        else:
+            query = f"INSERT INTO user_data (mobile_no,first_name,last_name,password,dp_url) values('{data['mobile_no']}','{data['first_name']}','{data['last_name']}','{data['password']}','blank');"
+            self.cur.execute(query)
+            return render_template('DpPage.html')
         
     def new_post(self,file_name):
         self.cur.execute(f"SELECT first_name,last_name,mobile_no from user_data where mobile_no = '{session.get('mobile_no')} ';")

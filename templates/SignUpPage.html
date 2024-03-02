@@ -14,7 +14,7 @@
 }
 main{
     z-index: 2;
-    position: fixed;
+    position: relative;
 }
 
 
@@ -37,7 +37,7 @@ main .form_background{
     left: 35vw;
     z-index: 1;
     background-color: white;
-    height: 70vh;
+    height: 90vh;
     width: 30vw;
 }
 main input[type=text],[type=password]{
@@ -72,6 +72,12 @@ main input[type=submit]{
    
     padding : 2vh 8vw;
 }
+main form li{
+    color: red;
+    position: relative;
+    top: 2vh;
+    left: 7vw;
+}
     </style>
 </head>
 
@@ -80,6 +86,13 @@ main input[type=submit]{
         <h1>FaceBook</h1>
         <user_form class="form_background">
             <form action="/create_account" method="post">
+                {% if errors %}
+                  <ul type="circle">
+                    {% for error in errors %}
+                       <li>{{error}}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
                 <input type="text" name="first_name" placeholder="First Name" id="first_name">
 
                 <input type="text" name="last_name" placeholder="Last Name" id="last_name">
