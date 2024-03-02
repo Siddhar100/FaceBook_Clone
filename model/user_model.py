@@ -28,6 +28,8 @@ class user_model():
         form_password = data['password']
         if not form_mobile:
             errors.append("Enter Mobile no!")
+        elif len(form_mobile) < 10:
+            errors.append("Need 10 digit Mobile no!")
         if not form_password:
             errors.append("Enter Password!")
         if errors:
@@ -114,12 +116,16 @@ class user_model():
             errors.append("Enter Last Name!")
         if not data['mobile_no']:
             errors.append("Enter mobile no!")
+        elif len(data['mobile_no']) < 10:
+            errors.append("mobile no should be of 10 digits!")
         if not data['password']:
             errors.append('Set Password!')
+        elif len(data['password']) < 8:
+            errors.append("need 8 charecter Password.!")
         if not data['confirm_password']:
             errors.append("Please confirm Password!")
         elif data['password'] != data['confirm_password']:
-            errors.append("Type Password correctly!")
+            errors.append("Type Password correctly!") 
         self.cur.execute(f"select * from user_data where mobile_no = '{data['mobile_no']}';")
         user_exists = self.cur.fetchall()
         if len(user_exists) > 0:
