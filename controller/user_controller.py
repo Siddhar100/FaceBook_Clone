@@ -39,6 +39,8 @@ def user_create_account():
 def upload_dp():
     if request.method == 'POST':
        file = request.files['dp-input']
+       if not file:
+           return obj.upload_dp("people.jpg")
        tm = str(time.time())
        tm_decimal = tm.split('.')[0]
        file_name = f"{tm_decimal}_{file.filename}"
