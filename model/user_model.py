@@ -34,6 +34,9 @@ class user_model():
             return render_template('LoginPage.html',errors=errors)
         self.cur.execute(f"SELECT * FROM user_data where mobile_no = '{form_mobile}';")
         result = self.cur.fetchall()
+        if len(result) == 0:
+            errors.append("Invalid mobile no!")
+            return render_template('LoginPage.html',errors=errors)
         user_password = result[0]['password']
         user_dp = result[0]['dp_url']
         print(user_dp)
@@ -120,7 +123,7 @@ class user_model():
         self.cur.execute(f"select * from user_data where mobile_no = '{data['mobile_no']}';")
         user_exists = self.cur.fetchall()
         if len(user_exists) > 0:
-            errors.append("This number already registered!")
+            errors.append("This number is already registered!")
         if errors:
             return render_template('SignUpPage.html',errors=errors)
         else:
